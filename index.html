@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+<html lang="en-SG">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#031227">
+  <title>AC Cool Aircon SG | Aircon Servicing, Repair & Installation</title>
+  <meta name="description" content="Explore air-conditioning servicing, chemical wash, chemical overhaul, troubleshooting, repair and installation by AC Cool Aircon SG in Singapore.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://accoolairconsg.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #08A9F5;
+      --blue-dark: #007FC2;
+      --blue-soft: #DDF4FF;
+      --navy: #031227;
+      --navy-2: #081D36;
+      --navy-3: #102B48;
+      --ink: #10243A;
+      --body: #42556B;
+      --muted: #71849A;
+      --paper: #F4F8FC;
+      --white: #FFFFFF;
+      --line: #DCE5EE;
+      --green: #B8F2D1;
+      --radius: 22px;
+      --container: 1200px;
+      --shadow: 0 22px 65px rgba(3,18,39,.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button, input, textarea { font: inherit; }
+    img, svg { max-width: 100%; }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    .container { width: min(var(--container), calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--blue-dark); font: 500 15px "DM Mono", monospace;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 25px; height: 2px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { line-height: 1.12; letter-spacing: -.045em; }
+    h1 { font-size: clamp(42px, 6.2vw, 76px); font-weight: 800; }
+    h2 { font-size: clamp(34px, 4.4vw, 54px); font-weight: 800; }
+    h3 { font-size: clamp(22px, 2.3vw, 28px); font-weight: 700; }
+    p { color: var(--body); }
+    .section { padding: 108px 0; }
+    .section-head { max-width: 720px; margin-bottom: 52px; }
+    .section-head h2 { margin: 17px 0 18px; }
+    .section-head p { max-width: 650px; margin-bottom: 0; }
+    .btn {
+      min-height: 54px; padding: 14px 22px; border-radius: 999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px; font-size: 16px; font-weight: 800;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: var(--navy); background: var(--blue); box-shadow: 0 10px 28px rgba(8,169,245,.24); }
+    .btn-primary:hover { background: #35B9FA; }
+    .btn-light { color: var(--navy); background: var(--white); }
+    .btn-outline { color: var(--white); border: 1px solid rgba(255,255,255,.3); }
+    .arrow { font-size: 20px; line-height: 1; }
+    
+    /* Header */
+    .site-header {
+      position: absolute; z-index: 20; top: 0; left: 0; width: 100%;
+      color: var(--white); border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .nav-wrap { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 220px; }
+    .brand-mark {
+      color: var(--blue); font-size: 38px; line-height: 1;
+      font-weight: 800; letter-spacing: -.09em;
+    }
+    .brand-copy { display: grid; gap: 1px; line-height: 1.25; }
+    .brand-copy strong { font-size: 15px; letter-spacing: .04em; }
+    .brand-copy small { color: #A8B8C9; font-size: 12px; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a { color: #D9E6F1; font-size: 15px; font-weight: 700; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta { min-height: 46px; padding: 10px 18px; font-size: 15px; }
+    .menu-toggle {
+      display: none; width: 46px; height: 46px; border: 1px solid #476078;
+      color: white; background: transparent; border-radius: 12px; cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative; overflow: hidden; color: white;
+      min-height: 760px; padding: 160px 0 100px;
+      background:
+        radial-gradient(ellipse at 78% 42%, rgba(8,169,245,.19), transparent 38%),
+        linear-gradient(120deg, #031227 0%, #071D36 58%, #0A2947 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .2;
+      background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(90deg, black, transparent 88%);
+    }
+    .hero::after {
+      content: "AC"; position: absolute; right: -20px; bottom: -145px;
+      color: rgba(255,255,255,.025); font-size: clamp(280px, 42vw, 610px);
+      font-weight: 800; letter-spacing: -.12em; line-height: 1; pointer-events: none;
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 60px; }
+    .hero .eyebrow { color: #73D2FF; }
+    .hero h1 { max-width: 700px; margin: 23px 0 24px; }
+    .hero h1 span { color: var(--blue); }
+    .hero-lead { max-width: 580px; color: #C3D2E0; font-size: 19px; line-height: 1.7; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 34px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 32px; color: #AFC1D2; font-size: 14px; }
+    .live-dot { width: 9px; height: 9px; border-radius: 50%; background: #69E5AA; box-shadow: 0 0 0 5px rgba(105,229,170,.12); }
+    .hero-art { position: relative; min-height: 460px; display: grid; place-items: center; }
+    .airflow-ring {
+      position: absolute; width: min(420px, 90%); aspect-ratio: 1;
+      border: 1px solid rgba(8,169,245,.38); border-radius: 50%;
+      box-shadow: 0 0 90px rgba(8,169,245,.09), inset 0 0 60px rgba(8,169,245,.05);
+    }
+    .airflow-ring::before, .airflow-ring::after {
+      content: ""; position: absolute; border: 1px dashed rgba(8,169,245,.3); border-radius: 50%;
+    }
+    .airflow-ring::before { inset: 28px; }
+    .airflow-ring::after { inset: 62px; border-style: solid; opacity: .55; }
+    .unit-illustration {
+      position: relative; z-index: 2; width: min(390px, 90%);
+      filter: drop-shadow(0 35px 40px rgba(0,0,0,.3));
+      animation: float 6s ease-in-out infinite;
+    }
+    .hero-label {
+      position: absolute; z-index: 3; padding: 12px 16px;
+      color: #DDF5FF; background: rgba(10,38,65,.86);
+      border: 1px solid rgba(8,169,245,.35); border-radius: 12px;
+      font: 13px "DM Mono", monospace; backdrop-filter: blur(12px);
+    }
+    .hero-label.one { top: 15%; right: -1%; }
+    .hero-label.two { bottom: 12%; left: 0; }
+    .hero-label b { color: var(--blue); }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+    /* Proof strip */
+    .proof-strip { position: relative; z-index: 3; margin-top: -1px; background: var(--blue); }
+    .proof-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+    .proof-item { padding: 22px 26px; display: flex; align-items: center; gap: 14px; border-right: 1px solid rgba(3,18,39,.15); }
+    .proof-item:last-child { border: 0; }
+    .proof-icon { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid rgba(3,18,39,.3); border-radius: 50%; font-weight: 800; }
+    .proof-item strong { display: block; color: var(--navy); font-size: 15px; }
+    .proof-item small { color: #123B58; font-size: 13px; }
+
+    /* Intro */
+    .intro-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; align-items: start; }
+    .intro-statement { position: sticky; top: 110px; }
+    .intro-statement h2 { margin: 18px 0; }
+    .intro-copy { padding-top: 12px; }
+    .intro-copy p { font-size: 18px; }
+    .intro-callout {
+      margin-top: 28px; padding: 22px 24px; border-left: 3px solid var(--blue);
+      background: var(--paper); color: var(--ink); font-weight: 700;
+    }
+
+    /* Services: exact two rows of three icons */
+    .services { background: var(--paper); }
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0 28px; }
+    .service-item {
+      position: relative; min-height: 265px; padding: 30px 10px 34px;
+      border-top: 1px solid var(--line);
+    }
+    .service-item:nth-child(-n+3) { border-top: 0; }
+    .service-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; }
+    .service-number { color: #8DA2B7; font: 14px "DM Mono", monospace; }
+    .service-icon { width: 62px; height: 62px; color: var(--blue-dark); }
+    .service-item h3 { margin-bottom: 12px; }
+    .service-item p { max-width: 340px; margin: 0; font-size: 16px; }
+    .service-item:hover .service-icon { transform: translateY(-4px); }
+    .service-icon { transition: transform .25s ease; }
+
+    /* Diagnostic / process */
+    .diagnostic { color: white; background: var(--navy); overflow: hidden; }
+    .diagnostic .eyebrow { color: #73D2FF; }
+    .diagnostic h2 { max-width: 760px; }
+    .diagnostic p { color: #B6C6D7; }
+    .diagnostic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .symptom-list { border-top: 1px solid #29435E; }
+    .symptom {
+      display: flex; align-items: center; gap: 18px; padding: 17px 0;
+      border-bottom: 1px solid #29435E; color: #E5EEF7; font-weight: 700;
+    }
+    .symptom span { color: var(--blue); font: 14px "DM Mono", monospace; }
+    .process-visual {
+      position: relative; padding: 34px; border: 1px solid #29435E;
+      background: linear-gradient(145deg, #0C2948, #06182E);
+      border-radius: var(--radius);
+    }
+    .process-line { position: absolute; left: 58px; top: 65px; bottom: 65px; width: 1px; background: linear-gradient(var(--blue), transparent); }
+    .process-step { position: relative; display: grid; grid-template-columns: 48px 1fr; gap: 18px; padding: 16px 0; }
+    .step-no {
+      width: 42px; height: 42px; display: grid; place-items: center;
+      color: var(--blue); background: #0D3557; border: 1px solid #1A5B87;
+      border-radius: 50%; font: 14px "DM Mono", monospace;
+    }
+    .process-step strong { display: block; color: white; font-size: 17px; }
+    .process-step small { display: block; margin-top: 3px; color: #A9BED2; font-size: 15px; }
+
+    /* Pricing clarity */
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .price-panel { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); }
+    .price-panel.featured { color: white; background: var(--navy); border-color: var(--navy); }
+    .price-panel h3 { margin-bottom: 8px; }
+    .price-panel p { margin-bottom: 20px; }
+    .price-panel.featured p { color: #B7C8D9; }
+    .price-value { color: var(--blue-dark); font-size: 34px; font-weight: 800; letter-spacing: -.04em; }
+    .featured .price-value { color: var(--blue); }
+    .price-note { margin-top: 20px; color: var(--muted); font-size: 15px; }
+    .featured .price-note { color: #AFC0D1; }
+
+    /* Brand / CTA */
+    .brand-panel {
+      position: relative; overflow: hidden; padding: 70px;
+      color: white; background: linear-gradient(115deg, #071B33, #0B3153);
+      border-radius: 28px;
+    }
+    .brand-panel::after {
+      content: "COOL"; position: absolute; right: -10px; bottom: -82px;
+      color: rgba(255,255,255,.035); font-size: clamp(100px, 20vw, 250px);
+      font-weight: 800; letter-spacing: -.1em;
+    }
+    .brand-panel h2 { position: relative; z-index: 1; max-width: 720px; }
+    .brand-panel p { position: relative; z-index: 1; max-width: 650px; color: #C3D2E0; font-size: 18px; }
+    .brand-panel .btn { position: relative; z-index: 1; margin-top: 15px; }
+
+    /* FAQ */
+    .faq { background: var(--paper); }
+    .faq-list { max-width: 900px; border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item summary {
+      padding: 23px 4px; cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; gap: 20px;
+      color: var(--ink); font-size: 18px; font-weight: 800;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--blue-dark); font-size: 24px; }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-answer { max-width: 760px; padding: 0 4px 20px; }
+    .faq-answer p { margin: 0; }
+
+    /* Contact / footer */
+    .contact { color: white; background: var(--navy); }
+    .contact-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 70px; align-items: start; }
+    .contact .eyebrow { color: #73D2FF; }
+    .contact h2 { margin: 18px 0; }
+    .contact p { color: #B8C8D8; }
+    .contact-note { padding: 24px; background: #0A2541; border: 1px solid #24415D; border-radius: 18px; }
+    .contact-note strong { color: white; display: block; margin-bottom: 8px; }
+    .contact-note p { margin: 0; font-size: 15px; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    footer { padding: 30px 0 90px; color: #AABBCD; background: #020D1B; font-size: 14px; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-row strong { color: white; }
+
+    /* Mobile sticky conversion bar — exactly two buttons */
+    .mobile-cta { display: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 17px; }
+      .nav-links a { font-size: 14px; }
+      .hero-grid { grid-template-columns: 1fr  .8fr; gap: 25px; }
+      .hero { min-height: 690px; }
+      .intro-grid { gap: 45px; }
+      .diagnostic-grid, .contact-grid { gap: 40px; }
+      .brand-panel { padding: 50px; }
+    }
+    @media (max-width: 700px) {
+      body { font-size: 16px; padding-bottom: 76px; }
+      .container { width: calc(100% - 32px); }
+      .section { padding: 70px 0; }
+      .section-head { margin-bottom: 34px; }
+      .site-header { background: rgba(3,18,39,.94); backdrop-filter: blur(14px); }
+      .nav-wrap { min-height: 72px; }
+      .brand { min-width: 0; }
+      .brand-mark { font-size: 34px; }
+      .brand-copy strong { font-size: 13px; }
+      .brand-copy small { font-size: 11px; }
+      .menu-toggle { display: block; }
+      .nav-cta { display: none; }
+      .nav-links {
+        display: none; position: absolute; top: 71px; left: 0; right: 0;
+        padding: 18px 22px 24px; background: #061A30;
+        border-bottom: 1px solid #24415D; flex-direction: column; align-items: stretch;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 8px 0; font-size: 16px; }
+      .hero { min-height: auto; padding: 130px 0 58px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 16px; }
+      .hero h1 { max-width: 580px; font-size: clamp(42px, 12vw, 58px); }
+      .hero-lead { font-size: 17px; }
+      .hero-art { min-height: 290px; margin-top: 4px; }
+      .airflow-ring { width: 260px; }
+      .unit-illustration { width: 260px; }
+      .hero-label.one { top: 5%; right: 0; }
+      .hero-label.two { bottom: 3%; left: 0; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-item { padding: 14px 18px; border-right: 0; border-bottom: 1px solid rgba(3,18,39,.15); }
+      .proof-item:last-child { border-bottom: 0; }
+      .intro-grid, .diagnostic-grid, .contact-grid { grid-template-columns: 1fr; gap: 26px; }
+      .intro-statement { position: static; }
+      .intro-copy p { font-size: 17px; }
+      .service-grid { grid-template-columns: 1fr 1fr; gap: 0 18px; }
+      .service-item { min-height: 250px; padding: 24px 2px; border-top: 1px solid var(--line) !important; }
+      .service-item h3 { font-size: 21px; }
+      .service-item p { font-size: 15px; }
+      .service-icon { width: 54px; height: 54px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .brand-panel { padding: 34px 24px; }
+      .process-visual { padding: 24px 18px; }
+      .process-line { left: 41px; }
+      .contact-actions { flex-direction: column; }
+      .contact-actions .btn { width: 100%; }
+      footer { padding-bottom: 28px; }
+      .mobile-cta {
+        position: fixed; z-index: 50; display: grid; grid-template-columns: 1fr 1fr;
+        gap: 9px; left: 0; right: 0; bottom: 0;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(3,18,39,.97); border-top: 1px solid #24415D;
+        box-shadow: 0 -10px 30px rgba(3,18,39,.2);
+      }
+      .mobile-cta .btn { min-height: 48px; padding: 10px 8px; font-size: 15px; }
+    }
+    @media (max-width: 390px) {
+      .service-grid { grid-template-columns: 1fr; }
+      .service-item { min-height: 0; padding: 22px 0; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="AC Cool Aircon SG home">
+        <span class="brand-mark">AC</span>
+        <span class="brand-copy">
+          <strong>COOL AIRCON SG</strong>
+          <small>Professional. Reliable. Trusted.</small>
+        </span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav class="nav-links" id="main-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="https://accoolairconsg.com/">Visit website <span class="arrow">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">AC Cool Aircon Singapore</span>
+          <h1>Comfort starts with <span>air that works.</span></h1>
+          <p class="hero-lead">From routine aircon servicing to chemical cleaning, troubleshooting and installation, find the right care for your cooling system.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services">Explore our services <span class="arrow">↘</span></a>
+            <a class="btn btn-outline" href="https://accoolairconsg.com/">Visit AC Cool Aircon <span class="arrow">↗</span></a>
+          </div>
+          <div class="hero-note"><span class="live-dot"></span> Air-conditioning servicing and installation in Singapore</div>
+        </div>
+
+        <div class="hero-art" aria-label="Illustration of an air-conditioning unit with airflow lines">
+          <div class="airflow-ring"></div>
+          <div class="hero-label one"><b>01 /</b> CLEAN AIRFLOW</div>
+          <div class="hero-label two"><b>02 /</b> SYSTEM CARE</div>
+          <svg class="unit-illustration" viewBox="0 0 440 330" role="img" aria-labelledby="unit-title">
+            <title id="unit-title">Air-conditioning unit illustration</title>
+            <defs>
+              <linearGradient id="unitBody" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#FFFFFF"/>
+                <stop offset="1" stop-color="#B8CBD9"/>
+              </linearGradient>
+              <linearGradient id="unitShade" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#DCEAF4"/>
+                <stop offset="1" stop-color="#8EA9BC"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="220" cy="286" rx="160" ry="18" fill="#00101F" opacity=".45"/>
+            <path d="M52 84 Q52 62 76 58 L365 58 Q389 62 389 84 L389 190 Q389 210 367 215 L74 215 Q52 210 52 190Z" fill="url(#unitBody)" stroke="#F8FCFF" stroke-width="3"/>
+            <path d="M62 88 Q62 72 80 70 L360 70 Q378 72 378 88 L378 170 L62 170Z" fill="#F7FBFE"/>
+            <path d="M72 181 Q220 198 369 181 L369 194 Q220 211 72 194Z" fill="url(#unitShade)"/>
+            <path d="M82 198 Q220 218 358 198" fill="none" stroke="#6F91A8" stroke-width="3" opacity=".65"/>
+            <path d="M88 183 Q220 199 352 183" fill="none" stroke="#54768E" stroke-width="2" opacity=".4"/>
+            <rect x="91" y="91" width="258" height="6" rx="3" fill="#D9E7F0"/>
+            <circle cx="355" cy="111" r="4" fill="#08A9F5"/>
+            <path d="M120 235 C100 253 105 267 121 279 M220 237 C200 255 205 269 221 281 M320 235 C300 253 305 267 321 279" fill="none" stroke="#08A9F5" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+            <path d="M139 245 C130 257 132 268 141 275 M239 247 C230 259 232 270 241 277 M339 245 C330 257 332 268 341 275" fill="none" stroke="#8DDEFF" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="proof-strip" aria-label="Service overview">
+      <div class="container proof-grid">
+        <div class="proof-item"><span class="proof-icon">01</span><div><strong>Routine maintenance</strong><small>Regular servicing and cleaning</small></div></div>
+        <div class="proof-item"><span class="proof-icon">02</span><div><strong>Cleaning & restoration</strong><small>Chemical wash and overhaul</small></div></div>
+        <div class="proof-item"><span class="proof-icon">03</span><div><strong>Fault finding & installation</strong><small>Repair and system installation</small></div></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container intro-grid">
+        <div class="intro-statement">
+          <span class="eyebrow">The right care for your system</span>
+          <h2>Aircon care, made easier to understand.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>When an air-conditioning system is not cooling properly, starts leaking or needs routine maintenance, knowing which service to choose is the first step.</p>
+          <p>AC Cool Aircon SG provides a range of air-conditioning services, from general servicing and chemical cleaning to troubleshooting, repairs and installation. This homepage is structured to help visitors understand those options before making an enquiry.</p>
+          <div class="intro-callout">Not sure what your unit needs? Start with the symptoms and discuss the appropriate service before confirming a job.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">What we can help with</span>
+          <h2>Six ways to care for your aircon.</h2>
+          <p>Choose the service that best matches your system's condition. If the problem is unclear, ask for an assessment before deciding on a treatment.</p>
+        </div>
+
+        <!-- Exactly six custom SVG icons, arranged in two rows of three on desktop. -->
+        <div class="service-grid">
+          <article class="service-item">
+            <div class="service-top">
+              <span class="service-number">01 / MAINTENANCE</span>
+              <svg class="service-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect x="8" y="13" width="48" height="30" rx="6" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M14 20H50M17 36C23 31 28 31 33 36C38 41 43 41 48 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M23 50H41M32 43V50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>General servicing</h3>
+            <p>Routine cleaning and maintenance to help keep your air-conditioning system in good working condition.</p>
+          </article>
+
+          <article class="service-item">
+            <div class="service-top">
+              <span class="service-number">02 / DEEP CLEAN</span>
+              <svg class="service-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <path d="M32 7C32 7 15 28 15 39A17 17 0 0 0 49 39C49 28 32 7 32 7Z" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M24 41C25 47 29 49 34 49M46 15L51 10M49 23L57 22M18 17L13 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Chemical wash</h3>
+            <p>A deeper cleaning option for relevant build-up and dirt within the air-conditioning unit.</p>
+          </article>
+
+          <article class="service-item">
+            <div class="service-top">
+              <span class="service-number">03 / OVERHAUL</span>
+              <svg class="service-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect x="10" y="10" width="44" height="44" rx="8" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M32 17V47M17 32H47M21 21L43 43M43 21L21 43" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="32" cy="32" r="7" fill="#DDF4FF" stroke="currentColor" stroke-width="2.5"/>
+              </svg>
+            </div>
+            <h3>Chemical overhaul</h3>
+            <p>A more comprehensive cleaning treatment for units that require deeper attention. Suitability should be assessed first.</p>
+          </article>
+
+          <article class="service-item">
+            <div class="service-top">
+              <span class="service-number">04 / DIAGNOSIS</span>
+              <svg class="service-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <circle cx="27" cy="27" r="16" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M39 39L53 53M27 18V28L34 33" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M20 8L20 3M34 8L37 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Troubleshooting & repair</h3>
+            <p>Investigating faults and air-conditioning problems to identify the appropriate repair action.</p>
+          </article>
+
+          <article class="service-item">
+            <div class="service-top">
+              <span class="service-number">05 / REFRIGERANT</span>
+              <svg class="service-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <path d="M32 8C32 8 18 25 18 37A14 14 0 0 0 46 37C46 25 32 8 32 8Z" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M32 27V43M24 35H40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M11 15L16 11M48 13L53 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Gas top-up</h3>
+            <p>Refrigerant top-up where required, following assessment of the system and its condition.</p>
+          </article>
+
+          <article class="service-item">
+            <div class="service-top">
+              <span class="service-number">06 / NEW SYSTEM</span>
+              <svg class="service-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect x="8" y="14" width="48" height="27" rx="5" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M16 22H48M17 34C22 30 26 30 31 34C36 38 41 38 47 34M32 41V51M23 52H41" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Aircon installation</h3>
+            <p>Installation services for air-conditioning systems. Discuss your requirements and site conditions before arranging work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section diagnostic" id="how-it-works">
+      <div class="container diagnostic-grid">
+        <div>
+          <span class="eyebrow">Start with the symptoms</span>
+          <h2>Different problems need different solutions.</h2>
+          <p>A unit that is not cooling may need a different response from one that is leaking or making unusual noise. Describe what you notice so the next step can be discussed clearly.</p>
+          <div class="symptom-list">
+            <div class="symptom"><span>01</span> Aircon is not cooling as expected</div>
+            <div class="symptom"><span>02</span> Water leakage or drainage concern</div>
+            <div class="symptom"><span>03</span> Unusual noise or smell</div>
+            <div class="symptom"><span>04</span> Unit needs routine maintenance</div>
+          </div>
+        </div>
+        <div class="process-visual">
+          <div class="process-line"></div>
+          <div class="process-step"><span class="step-no">01</span><div><strong>Describe the issue</strong><small>Explain the symptoms and the type of unit.</small></div></div>
+          <div class="process-step"><span class="step-no">02</span><div><strong>Discuss the service</strong><small>Identify the relevant service or assessment needed.</small></div></div>
+          <div class="process-step"><span class="step-no">03</span><div><strong>Confirm the details</strong><small>Clarify scope, price and availability before work begins.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Pricing transparency</span>
+          <h2>Know what to ask before booking.</h2>
+          <p>Published directory information reports the following prices. Treat them as indicative starting points, not a confirmed quotation.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-panel featured">
+            <span class="eyebrow">Reported published price</span>
+            <h3>General servicing</h3>
+            <div class="price-value">From S$60</div>
+            <p>Reported starting price for general aircon servicing.</p>
+            <div class="price-note">Confirm the number of units, unit type, scope and final amount before arranging a visit.</div>
+          </article>
+          <article class="price-panel">
+            <span class="eyebrow">Reported published price</span>
+            <h3>Gas top-up</h3>
+            <div class="price-value">S$60–S$80</div>
+            <p>Reported price range for gas top-up.</p>
+            <div class="price-note">Ask for a diagnosis and an explanation of the work required before approving any refrigerant-related service.</div>
+          </article>
+        </div>
+        <p class="price-note">Pricing references are based on third-party listings describing prices published by the business. Verify current rates directly with AC Cool Aircon before publication or booking.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="brand-panel">
+          <span class="eyebrow">AC Cool Aircon SG</span>
+          <h2>Make your next aircon decision with more clarity.</h2>
+          <p>Explore the service options, describe the issue and confirm the recommended scope and price before arranging work.</p>
+          <a class="btn btn-primary" href="https://accoolairconsg.com/">Visit the current website <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Helpful information</span>
+          <h2>Questions before you arrange a service?</h2>
+          <p>Use these starting points to understand the different types of aircon care.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is the difference between general servicing and chemical wash?</summary>
+            <div class="faq-answer"><p>General servicing is routine maintenance. A chemical wash is a deeper cleaning option. The appropriate treatment depends on the unit's condition and should be assessed before work is agreed.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>When might a chemical overhaul be needed?</summary>
+            <div class="faq-answer"><p>A chemical overhaul is a more comprehensive cleaning procedure. It is not automatically required for every unit. Ask the technician to explain why it is recommended and what the work includes.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Should I request a gas top-up if the aircon is not cold?</summary>
+            <div class="faq-answer"><p>Not necessarily. Poor cooling can have several causes. Request troubleshooting first so the cause can be identified before deciding whether refrigerant work is appropriate.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>What should I confirm before booking?</summary>
+            <div class="faq-answer"><p>Confirm the service scope, number and type of units, any inspection or call-out fee, the total price, availability and whether additional work requires your approval.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">Take the next step</span>
+          <h2>Let's get your aircon issue understood.</h2>
+          <p>Visit AC Cool Aircon's current website to access its latest contact and enquiry details. Confirm the service, availability and total price directly before proceeding.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://accoolairconsg.com/">Visit AC Cool Aircon <span class="arrow">↗</span></a>
+            <a class="btn btn-outline" href="#services">Review services <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <aside class="contact-note">
+          <strong>Contact details to verify before launch</strong>
+          <p>The supplied website and third-party listing did not provide a reliably verified phone number, email address or WhatsApp destination in the research available for this build. Add the company's confirmed contact details here before publishing direct-call or message buttons.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div><strong>AC COOL AIRCON SG</strong><br>Professional. Reliable. Trusted.</div>
+      <div>Air-conditioning servicing, cleaning, repair and installation.</div>
+      <div>© <span id="year"></span> AC Cool Aircon SG</div>
+    </div>
+  </footer>
+
+  <!-- Exactly two persistent mobile conversion actions. -->
+  <div class="mobile-cta" aria-label="Quick actions">
+    <a class="btn btn-outline" href="#services">Services</a>
+    <a class="btn btn-primary" href="https://accoolairconsg.com/">Visit website ↗</a>
+  </div>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".nav-links");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+
+    navigation.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
